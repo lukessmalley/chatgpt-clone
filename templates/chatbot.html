@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Eugene</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+        body {
+            background-color: #F5EFED;
+        }
+        input, select, textarea {
+            border: 1px solid #0F0A0A;
+            background-color: #F5EFED;
+            color: #0F0A0A;
+        }
+        button {
+            background-color: #F5EFED;
+            color: #0F0A0A;
+        }
+        #reply {
+            background-color: #FFFFFF;
+            border: 1px solid #cecece;
+            color: #0F0A0A;
+            padding: 10px;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container"style="margin-top: 20px; font-family: monospace;">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Eugene</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <form action="/" method="POST">
+                    <div class="form-group">
+                        <label for="language">Language:</label>
+                        <select class="form-control" name="language" id="language">
+                            <option value="Python">Python</option>
+                            <option value="SQL">SQL</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="userinput">Input code:</label>
+                        <textarea class="form-control" name="userinput" id="userinput" rows="30" style="white-space: pre-wrap; font-family: monospace; font-size: 14px; line-height: 1.5; padding: 10px;" tabindex="-1" onkeydown="if(event.keyCode==9){document.execCommand('insertText', false, '\t'); return false;}">{{userinput}}</textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="background-color: #2292A4;border-color: #cecece;">Submit</button>
+                </form>
+            </div>
+            <div class="col-md-6">
+                <div id="reply" style="border-radius: 5px; white-space: pre-wrap; font-family: monospace; font-size: 14px; line-height: 1.5; padding: 10px;">
+                    {% if replyfrombot %}
+					<h3>Eugene says...</h3>
+                    <p>{{ replyfrombot }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

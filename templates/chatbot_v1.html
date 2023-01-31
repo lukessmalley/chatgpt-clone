@@ -1,0 +1,84 @@
+<html>
+  <head>
+    <title>Eugene</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<style>
+	h1{
+		color: #00b0ff;
+		text-align: center;
+		font-family: 'PT Sans', sans-serif;
+		font-weight: normal;
+		font-size: 2em;
+		margin: 10px;
+		padding: 20px;
+		margin-bottom: 20px;
+	}
+	label{
+		text-align: left;
+		font-family: 'PT Sans', sans-serif;
+		font-weight: bold;
+		font-size: 0.8em;
+		margin: 10px;
+		padding: 20px;
+		margin-bottom: 10px;
+	}
+	#response-container{
+		padding: 20px;
+		border: 1px solid #cccccc;
+		background-color: #fbfbfb;
+		margin: 10px;
+		border-radius: 4px;
+		box-shadow: 0 0 5px #dddddd;
+		margin-top: 20px;
+	}
+	input[type="text"]{
+		text-align: left;
+		border: 1px solid #cccccc;
+		border-radius: 4px;
+		padding: 5px;
+		padding-left: 50px;
+		width: 70%;
+		margin-bottom: 10px;
+		background-color: #d4dee3;
+		color: #01090c;
+		padding: 10px;
+		border-radius: 4px;
+		border: 0;
+		cursor: pointer;
+	}
+	input[type="submit"]{
+		text-align: center;
+		border: 1px solid #cccccc;
+		border-radius: 4px;
+		padding: 5px;
+		width: 20%;
+		margin-bottom: 10px;
+		background-color: #d4dee3;
+		color: #01090c;
+		padding: 10px;
+		border-radius: 4px;
+		border: 0;
+		cursor: pointer;
+	}
+	</style>
+  </head>
+  <body>
+    <h1>Eugene
+	</h1>
+    <form action="/" method="POST">
+      <label>Enter your code here</label>
+	  <br>
+      <input type="text" name="userinput" autofocus/>
+	  <br>
+      <label>Enter the programming language</label>
+	  <br>
+      <input type="text" name="language" autofocus/>
+	  <br>
+      <input type="submit" value="Let Eugene see ya code!"/>
+    </form>
+    <div id="response-container" class="container">
+      {{ response }}
+      {{ replyfrombot }}
+    </div>
+  </body>
+</html>
